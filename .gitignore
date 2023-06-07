@@ -1,0 +1,14 @@
+.vscode/
+*.code-workspace
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+/target/
+/bin/
+/logs/
+/.idea/
+*.iml
+*.class
