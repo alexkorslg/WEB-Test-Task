@@ -9,6 +9,7 @@ import java.time.Duration;
 
 public class ProductPage {
     private WebDriver driver;
+
     private By addToCartButton = By.linkText("Add to cart");
 
     public ProductPage(WebDriver driver) {
@@ -16,7 +17,7 @@ public class ProductPage {
     }
 
     public void addToCart() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
         driver.findElement(addToCartButton).click();
     }

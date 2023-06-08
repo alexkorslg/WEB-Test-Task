@@ -10,6 +10,7 @@ import java.time.Duration;
 
 public class RegistrationPage {
     private WebDriver driver;
+
     private By signupButton = By.id("signin2");
     private By nameInput = By.id("sign-username");
     private By passwordInput = By.id("sign-password");

@@ -10,6 +10,7 @@ import java.time.Duration;
 
 public class LoginPage {
     private WebDriver driver;
+
     private By loginButton = By.id("login2");
     private By userNameInput = By.id("loginusername");
     private By userPasswordInput = By.id("loginpassword");
