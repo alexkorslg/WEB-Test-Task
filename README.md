@@ -42,6 +42,6 @@ The project follows the Page Object Model (POM) design pattern. It consists of t
 4. Run the test classes to execute the test cases.
 
 ## Test Results
-![vscode tests results](https://github.com/alexkorslg/WEB-Test-Task/blob/main/screenshot.jpg?raw=true)
+![vscode tests results](https://github.com/alexkorslg/WEB-Test-Task/blob/main/tests_screenshot.jpg?raw=true)
 
 
