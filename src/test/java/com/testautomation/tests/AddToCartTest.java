@@ -30,6 +30,7 @@ public class AddToCartTest {
         DriverManager.getDriver().get("https://www.demoblaze.com/");
         homePage.clickProduct(productName);
         productPage.addToCart();
+
         // Get the text from the alert window
         String alertText = productPage.getProductAddedToCart();
         // Define the expected alert text
