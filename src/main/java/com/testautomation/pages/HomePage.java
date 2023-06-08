@@ -16,7 +16,7 @@ public class HomePage {
 
     public void clickProduct(String productName) {
         By productLink = By.xpath("//*[contains(@class, 'card-title')]//a[contains(text(), '" + productName + "')]");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(productLink));
         driver.findElement(productLink).click();
     }
