@@ -8,6 +8,15 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
+    public void closeCookiePopup() {
+        By cookiePopup = By.cssSelector("form.js-cookie-notification__form");
+        By cookieCloseButton = By.cssSelector("button[aria-label='Accept our cookies']");
+
+        if (driver.findElement(cookiePopup).isDisplayed()) {
+            waitForElementToBeClickable(cookieCloseButton).click();
+        }
+    }
+
     public void clickProduct(String productName) {
         By productLink = By.xpath("//*[contains(@class, 'card-title')]//a[contains(text(), '" + productName + "')]");
         waitForElementToBeClickable(productLink).click();
