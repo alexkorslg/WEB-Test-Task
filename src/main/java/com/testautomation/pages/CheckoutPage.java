@@ -2,14 +2,8 @@ package com.testautomation.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class CheckoutPage {
-    private WebDriver driver;
-
+public class CheckoutPage extends BasePage {
     private By userNameInput = By.id("name");
     private By countryInput = By.id("country");
     private By cityInput = By.id("city");
@@ -20,27 +14,23 @@ public class CheckoutPage {
     private By orderConfirmationMessage = By.cssSelector(".sweet-alert h2");
 
     public CheckoutPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void enterOrderDetails(String userName, String country, String city, String creditСard, String month, String year) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(userNameInput));
-
-        driver.findElement(userNameInput).sendKeys(userName);
-        driver.findElement(countryInput).sendKeys(country);
-        driver.findElement(cityInput).sendKeys(city);
-        driver.findElement(creditСardInput).sendKeys(creditСard);
-        driver.findElement(monthInput).sendKeys(month);
-        driver.findElement(yearInput).sendKeys(year);
+        waitForElementToBeVisible(userNameInput).sendKeys(userName);
+        waitForElementToBeVisible(countryInput).sendKeys(country);
+        waitForElementToBeVisible(cityInput).sendKeys(city);
+        waitForElementToBeVisible(creditСardInput).sendKeys(creditСard);
+        waitForElementToBeVisible(monthInput).sendKeys(month);
+        waitForElementToBeVisible(yearInput).sendKeys(year);
     }
 
     public void clickPurchaseButton() {
-        driver.findElement(purchaseButton).click();
+        waitForElementToBeClickable(purchaseButton).click();
     }
 
     public String getOrderConfirmationMessage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(orderConfirmationMessage)).getText();
+        return waitForElementToBeVisible(orderConfirmationMessage).getText();
     }
 }
